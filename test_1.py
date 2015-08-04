@@ -1,20 +1,25 @@
 from math import factorial
+import sys
 
-def getTrailingZeros(number):
-    """
-    Obtiene la cantidad de ceros que tiene el factorial de 'number', basandose en el numero de multiplos de 5, menores a 'number'
-    Vease:
-    - http://www.ganitcharcha.com/view-article-A-Note-on-Factorial-and-it%27s-Trailing-Zeros.html
-    - http://www.purplemath.com/modules/factzero.htm
-    """
-    count = 0
-    for i in range(0,number): #Iteramos hasta number
-        if i % 5 == 0: #Si el numero actual es multiplo de 5, se incrementa el contador
-            count=count+1
+
+def getZerosFactorial(number):
+    '''
+    Obtiene la cantidad de ceros del factorial de 'number'
+    Args:
+    - Number: Numero al cual se desea obtener el la cantidad de 0's de su factorial.
+    Return:
+    - Cantidad de 0's del factorial de number
+    '''
+    n=factorial(number)
+    count=0
+    while n > 10:
+        mod=n%10
+        if mod == 0:
+            count+=1
+        n=long(n/10)
     return count
 
-
 if __name__ == '__main__':
-    n=10
-    print "Factorial:%i" % factorial(n)
-    print "Cantidad de ceros:%d" % getTrailingZeros(n)
+    n=int(sys.argv[1])
+    print factorial(n)
+    print getZerosFactorial(n)
