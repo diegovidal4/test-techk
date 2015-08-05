@@ -21,5 +21,5 @@ def getZerosFactorial(number):
 
 if __name__ == '__main__':
     n=int(sys.argv[1])
-    print factorial(n)
-    print getZerosFactorial(n)
+    print "Factorial %i" % factorial(n)
+    print "Ceros:%i" % getZerosFactorial(n)
