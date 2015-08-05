@@ -58,7 +58,11 @@ CIENTOS = (
 
 def numero_a_letras(numero):
     """
-    Convierte el numero a una oracion,
+    Convierte el numero a una oracion, dividiendo el numero dependiendo de la cantidad de digitos que tiene (unidades, decenas, centenas, etc.)
+    Args:
+    - Numero: Numero que se desea convertir en palabras.
+    Return:
+    - Numero en palabras
     """
     numero_entero = int(numero)
     if numero_entero > MAX_NUMERO:
@@ -168,7 +172,11 @@ def leer_millones(numero):
 
 def leer_millardos(numero):
     """
-    Convierte las unidades de millon a palabras.
+    Convierte las decenas de millon a palabras.
+    Args:
+    - Numero: Decenas de millon que se desean convertir a letras
+    Return:
+    - Decenas de millon convertidas en palabras
     """
     millardo, millon = divmod(numero, 1000000)
     return '%s millones %s' % (leer_miles(millardo), leer_millones(millon))
